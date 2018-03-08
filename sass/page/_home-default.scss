@@ -895,11 +895,11 @@
 	}
 
 	.grid img {
-		-webkit-filter: grayscale(60%);
-		-moz-filter: grayscale(60%);
-		-o-filter: grayscale(60%);
-		-ms-filter: grayscale(60%);
-	    filter: grayscale(60%);
+		//-webkit-filter: grayscale(60%);
+		//-moz-filter: grayscale(60%);
+		//-o-filter: grayscale(60%);
+		//-ms-filter: grayscale(60%);
+        //filter: grayscale(60%);
 		-webkit-transition: all .3s ease;
 		-moz-transition: all .3s ease;
 		transition: all .3s ease;
