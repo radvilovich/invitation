@@ -1,0 +1,79 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "project-name"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "template",
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "template/css/font-awesome.min.css",
+        "template/css/flaticon.css",
+        "template/css/bootstrap.min.css",
+        "template/css/animate.css",
+        "template/css/owl.carousel.css",
+        "template/css/owl.theme.css",
+        "template/css/slick.css",
+        "template/css/slick-theme.css",
+        "template/css/owl.transitions.css",
+        "template/css/jquery.fancybox.css",
+        "template/css/magnific-popup.css",
+        "template/fonts/firstsiteguide_blogger-sans/BloggerSans-MediumItalic.css",
+        "template/sass/style.scss"
+      ],
+      "scripts": [
+        "template/js/jquery.min.js",
+        "template/js/bootstrap.min.js",
+        "template/js/jquery-plugin-collection.js",
+        "template/js/spirit.js",
+        "template/js/script.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "component": {}
+  }
+}
