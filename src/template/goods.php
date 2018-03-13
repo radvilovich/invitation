@@ -6,4 +6,5 @@
  * Time: 00:04
  */
 
-print_r($_POST);
+
+echo json_encode($_POST);
