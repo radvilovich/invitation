@@ -7,4 +7,8 @@
  */
 
 
-echo json_encode($_GET);
+//echo json_encode($_GET);
+
+$goods = file_get_contents('goods.json');
+
+echo $goods;

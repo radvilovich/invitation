@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- start inportant-people-section -->\n<section class=\"inportant-people-section section-padding\" id=\"people\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col col-xs-12\">\n        <div class=\"section-title\">\n          <div class=\"vertical-line\"><span><i class=\"fi flaticon-two\"></i></span></div>\n          <h2>Подарки</h2>\n        </div>\n      </div>\n    </div> <!-- end section-title -->\n\n    <div class=\"row\">\n      <div class=\"col col-xs-12\">\n        <div class=\"inportant-people-content\">\n          <div class=\"tablist\">\n            <ul class=\"nav\">\n              <li *ngFor=\"let tab of tabs\" class=\"{{tab.id === selectedTab ? 'active' : ''}}\" >\n                <a (click)=\"selectedTab = tab.id\" data-toggle=\"tab\">{{tab.name}}</a>\n              </li>\n            </ul>\n          </div>\n\n          <div class=\"tab-content\">\n            <div class=\"tab-pane in active grid-wrapper\">\n              <div class=\"grid\" *ngFor=\"let good of getGudsByTabId()\">\n                <div class=\"img-holder\">\n                  <a href=\"template/images/{{good.tab}}/{{good.img}}.jpg\" class=\"popup-image\">\n                    <img src=\"template/images/{{good.tab}}/{{good.img}}.jpg\" alt class=\"img img-responsive\">\n                  </a>\n                </div>\n                <div class=\"details\">\n                  <h3>{{good.name}}</h3>\n                  <span>{{good.price}}</span>\n                  <ul class=\"social-links\">\n                    <li><a href=\"{{good.link}}\">ссылка на подарок</a></li>\n                    <li><a (click)=\"reservation(good)\">Зарезервировать</a></li>\n                  </ul>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div> <!-- end row -->\n  </div> <!-- end container -->\n</section>\n<!-- end inportant-people-section -->"
+module.exports = "<!-- start inportant-people-section -->\n<section class=\"inportant-people-section section-padding\" id=\"people\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col col-xs-12\">\n        <div class=\"section-title\">\n          <div class=\"vertical-line\"><span><i class=\"fi flaticon-two\"></i></span></div>\n          <h2>Подарки</h2>\n        </div>\n      </div>\n    </div> <!-- end section-title -->\n\n    <div class=\"row\">\n      <div class=\"col col-xs-12\">\n        <div class=\"inportant-people-content\">\n          <div class=\"tablist\">\n            <ul class=\"nav\">\n              <li *ngFor=\"let tab of tabs\" class=\"{{tab.id === selectedTab ? 'active' : ''}}\" >\n                <a (click)=\"selectedTab = tab.id\" data-toggle=\"tab\">{{tab.name}}</a>\n              </li>\n            </ul>\n          </div>\n\n          <div class=\"tab-content\">\n            <div class=\"tab-pane in active grid-wrapper\">\n              <div class=\"grid\" *ngFor=\"let good of getGudsByTabId()\">\n                <div class=\"img-holder\">\n                  <a href=\"{{good.link}}\" class=\"popup-image\">\n                    <img src=\"template/images/{{good.tab}}/{{good.img}}.jpg\" alt class=\"img img-responsive\">\n                  </a>\n                </div>\n                <div class=\"details\">\n                  <h3>{{good.name}}</h3>\n                  <span>{{good.price}}</span>\n                  <ul class=\"social-links\">\n                    <li *ngIf=\"!good.reserved\">\n                        <input type=\"text\" [(ngModel)]=\"good.by\" placeholder=\"Ваше имя\">\n                        <a class=\"btn btn-primary\" style=\"color: white\" (click)=\"reservation(good)\">Зарезервировать</a>\n                    </li>\n                    <li *ngIf=\"!good.reserved && good.by\">\n                      Зарезервировано за <br> {{good.by}}\n                    </li>\n                  </ul>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div> <!-- end row -->\n  </div> <!-- end container -->\n</section>\n<!-- end inportant-people-section -->"
 
 /***/ }),
 
@@ -51,7 +51,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var AppComponent = /** @class */ (function () {
     function AppComponent(http) {
-        var _this = this;
         this.http = http;
         this.title = 'app';
         this.selectedTab = 'groomsmen';
@@ -61,16 +60,22 @@ var AppComponent = /** @class */ (function () {
             { id: "clothes", name: "Одежда", active: false },
         ];
         this.goods = [];
+        this.getGoods();
+    }
+    AppComponent.prototype.getGoods = function () {
+        var _this = this;
         this.http.get('template/goods.json').subscribe(function (data) {
             _this.goods = data;
         });
-    }
+    };
     AppComponent.prototype.reservation = function (good) {
+        var _this = this;
         good.reserved = true;
         console.log(good);
-        this.http.get('template/goods.php?name' + good.name).subscribe(function (data) {
+        this.http.get('template/goods.php?name=' + good.name).subscribe(function (data) {
             console.log(1);
             console.log(data);
+            _this.getGoods();
         });
     };
     AppComponent.prototype.getGudsByTabId = function () {
@@ -101,12 +106,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("./src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -121,7 +128,8 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */]
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
@@ -164,7 +172,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_7" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
