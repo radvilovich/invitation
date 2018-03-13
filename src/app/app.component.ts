@@ -32,11 +32,12 @@ export class AppComponent {
     public reservation(good) {
         good.reserved = true;
 
-        console.log(good);
-        this.http.get('template/goods.php?name=' + good.name + '&by=' + good.by).subscribe(data => {
+        if (good.by !== '') {
+            this.http.get('template/goods.php?name=' + good.name + '&by=' + good.by).subscribe(data => {
 
-            this.getGoods();
-        });
+                this.getGoods();
+            });
+        }
     }
 
 

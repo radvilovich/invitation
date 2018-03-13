@@ -71,10 +71,11 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.reservation = function (good) {
         var _this = this;
         good.reserved = true;
-        console.log(good);
-        this.http.get('template/goods.php?name=' + good.name + '&by=' + good.by).subscribe(function (data) {
-            _this.getGoods();
-        });
+        if (good.by !== '') {
+            this.http.get('template/goods.php?name=' + good.name + '&by=' + good.by).subscribe(function (data) {
+                _this.getGoods();
+            });
+        }
     };
     AppComponent.prototype.getGudsByTabId = function () {
         var _this = this;
