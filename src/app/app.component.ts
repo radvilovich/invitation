@@ -33,9 +33,7 @@ export class AppComponent {
         good.reserved = true;
 
         console.log(good);
-        this.http.get('template/goods.php?name=' + good.name).subscribe(data => {
-            console.log(1);
-            console.log(data);
+        this.http.get('template/goods.php?name=' + good.name + '&by=' + good.by).subscribe(data => {
 
             this.getGoods();
         });

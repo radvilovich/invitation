@@ -37,7 +37,7 @@
                         <input type="text" [(ngModel)]="good.by" placeholder="Ваше имя">
                         <a class="btn btn-primary" style="color: white" (click)="reservation(good)">Зарезервировать</a>
                     </li>
-                    <li *ngIf="!good.reserved && good.by">
+                    <li *ngIf="good.reserved && good.by">
                       Зарезервировано за <br> {{good.by}}
                     </li>
                   </ul>
