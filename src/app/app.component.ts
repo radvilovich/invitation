@@ -29,7 +29,7 @@ export class AppComponent {
         good.reserved = true;
 
         console.log(good);
-        this.http.post('template/goods.php', {goods: this.goods}).subscribe(data => {
+        this.http.get('template/goods.php?name' + good.name).subscribe(data => {
             console.log(1);
             console.log(data);
         });

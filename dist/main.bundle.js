@@ -68,7 +68,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.reservation = function (good) {
         good.reserved = true;
         console.log(good);
-        this.http.post('template/goods.php', { goods: this.goods }).subscribe(function (data) {
+        this.http.get('template/goods.php?name' + good.name).subscribe(function (data) {
             console.log(1);
             console.log(data);
         });
