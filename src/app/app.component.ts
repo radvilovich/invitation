@@ -23,12 +23,20 @@ export class AppComponent {
         this.http.get('template/goods.json').subscribe(data => {
             this.goods = data;
         });
+    }
 
+    public reservation(good) {
+        good.reserved = true;
 
+        console.log(good);
+        this.http.post('template/goods.php', {goods: this.goods}).subscribe(data => {
+            console.log(1);
+            console.log(data);
+        });
     }
 
 
-  public getGudsByTabId(){
+    public getGudsByTabId(){
       return this.goods.filter((good) => good.tab === this.selectedTab);
   }
 }
