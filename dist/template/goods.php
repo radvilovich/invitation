@@ -6,4 +6,4 @@
  * Time: 00:04
  */
 
-echo $_POST['goods'];
+print_r($_POST);
