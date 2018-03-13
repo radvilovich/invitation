@@ -9,12 +9,12 @@ import {HttpClient} from "@angular/common/http";
 export class AppComponent {
   title = 'app';
 
-  public selectedTab = '#groomsmen';
+  public selectedTab = 'groomsmen';
 
   public tabs = [
-      {id: "#groomsmen", name: "Книжки", active: true},
-      {id: "#bridesmaid", name: "Игрушки", active: false},
-      {id: "#bridesmaid2", name: "Одежда", active: false},
+      {id: "groomsmen", name: "Книжки", active: true},
+      {id: "bridesmaid", name: "Игрушки", active: false},
+      {id: "clothes", name: "Одежда", active: false},
   ];
 
   public goods: any = [];

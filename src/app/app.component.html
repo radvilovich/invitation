@@ -25,15 +25,15 @@
             <div class="tab-pane in active grid-wrapper">
               <div class="grid" *ngFor="let good of getGudsByTabId()">
                 <div class="img-holder">
-                  <a href="template/images/groomsmen/img-1.jpg" class="popup-image">
-                    <img src="template/images/groomsmen/img-1.jpg" alt class="img img-responsive">
+                  <a href="template/images/{{good.tab}}/{{good.img}}.jpg" class="popup-image">
+                    <img src="template/images/{{good.tab}}/{{good.img}}.jpg" alt class="img img-responsive">
                   </a>
                 </div>
                 <div class="details">
-                  <h3>"Маленький принц" Антуан де Сент-Экзюпери</h3>
-                  <span>19 BYN</span>
+                  <h3>{{good.name}}</h3>
+                  <span>{{good.price}}</span>
                   <ul class="social-links">
-                    <li><a href="https://oz.by/books/more1039921.html">ссылка на подарок</a></li>
+                    <li><a href="{{good.link}}">ссылка на подарок</a></li>
                   </ul>
                 </div>
               </div>
