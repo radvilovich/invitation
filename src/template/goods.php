@@ -6,4 +6,4 @@
  * Time: 00:04
  */
 
-echo 123;
+echo $_POST['goods'];
