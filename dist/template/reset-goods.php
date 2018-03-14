@@ -13,8 +13,9 @@ if($_GET['name']) {
     $goods = file_get_contents('goods.json');
     $goodsArr = json_decode($goods, 1);
     foreach($goodsArr as $key => $value) {
-        echo $value['by'].'---'.$_GET['name'];
+        echo $value['by'].'---'.$_GET['name'].'<br>';
         if ($value['by'] === $_GET['name'] && $_GET['by'] != '') {
+            echo '123123123123 <br>';
             $goodsArr[$key]['by'] = "";
             $goodsArr[$key]['reserved'] = "";
         }
