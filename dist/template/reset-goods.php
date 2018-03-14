@@ -20,12 +20,12 @@ if($_GET['name']) {
     }
     file_put_contents('goods.json', json_encode($goodsArr));
 
-    echo json_encode($goodsArr);
-} else {
+    echo 'unreserved';
+} else if($_GET['reset'] === 1) {
     $goods = file_get_contents('_goods.json');
 
     file_put_contents('goods.json', $goods);
 
-    echo $goods;
+    echo 'reset';
 }
 
