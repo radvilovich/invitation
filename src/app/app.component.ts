@@ -24,7 +24,7 @@ export class AppComponent {
     }
 
     public getGoods() {
-        this.http.get('template/goods.json').subscribe(data => {
+        this.http.get('template/get-goods.php').subscribe(data => {
             this.goods = data;
         });
     }
