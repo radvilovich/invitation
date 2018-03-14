@@ -23,7 +23,7 @@ if($_GET['name']) {
     file_put_contents('goods.json', json_encode($goodsArr));
 
 
-} else if($_GET['reset'] === 1) {
+} else if($_GET['reset'] == 1) {
     $goods = file_get_contents('_goods.json');
 
     file_put_contents('goods.json', $goods);
