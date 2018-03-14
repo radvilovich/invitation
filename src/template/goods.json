@@ -1,7 +1,7 @@
 [
   {
     "tab": "groomsmen",
-    "name": ""Маленький принц" Антуан де Сент-Экзюпери",
+    "name": "Маленький принц Антуан де Сент-Экзюпери",
     "img": "img-1",
     "price": "19 BYN",
     "link": "https://oz.by/books/more1039921.html",
@@ -34,7 +34,7 @@
     "link": "https://oz.by/books/more10440736.html",
     "reserved": "",
     "by": ""
-  }
+  },
   {
     "tab": "groomsmen",
     "name": "Первый учебник малыша. От 6 месяцев до 3 лет",
@@ -46,7 +46,7 @@
   },
   {
     "tab": "groomsmen",
-    "name": ""Знаешь, как я тебя люблю?" Сэм Макбратни",
+    "name": "Знаешь, как я тебя люблю? Сэм Макбратни",
     "img": "img-6",
     "price": "35 BYN",
     "link": "https://oz.by/books/more10273598.html",
@@ -55,7 +55,7 @@
   },
   {
     "tab": "bridesmaid",
-    "name": "Пирамидка "Радуга"",
+    "name": "Пирамидка Радуга",
     "img": "img-1",
     "price": "12 BYN",
     "link": "https://oz.by/kids/more10497073.html",
@@ -73,7 +73,7 @@
   },
   {
     "tab": "bridesmaid",
-    "name": "Лабиринт "Желтый"",
+    "name": "Лабиринт Желтый",
     "img": "img-3",
     "price": "20 BYN",
     "link": "https://oz.by/kids/more10562562.html",
@@ -100,13 +100,13 @@
   },
   {
     "tab": "bridesmaid",
-    "name": "Рамка-вкладыш "Фигуры"",
+    "name": "Рамка-вкладыш Фигуры",
     "img": "img-6",
     "price": "6 BYN",
     "link": "https://oz.by/kids/more10598463.html",
     "reserved": "",
     "by": ""
-  }
+  },
   {
     "tab": "clothes",
     "name": "Боди 12-18 мес",
@@ -142,7 +142,7 @@
     "link": "https://mothercare.by/kombinezon-devichij-trikotazhnyj-lpe028.html",
     "reserved": "",
     "by": ""
-  }
+  },
   {
     "tab": "clothes",
     "name": "Джемпер 18-24 мес",
@@ -160,5 +160,5 @@
     "link": "https://mothercare.by/catalog/product/view/id/425209/s/brjuki-devich-i-trikotazhnye-lpb952/",
     "reserved": "",
     "by": ""
-  },
+  }
 ]
