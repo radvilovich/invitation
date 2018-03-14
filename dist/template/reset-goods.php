@@ -9,8 +9,23 @@
 
 //echo json_encode($_GET);
 
-$goods = file_get_contents('_goods.json');
+if($_GET['name']) {
+    $goods = file_get_contents('goods.json');
+    $goodsArr = json_decode($goods, 1);
+    foreach($goodsArr as $key => $value) {
+        if ($value['by'] === $_GET['name'] && $_GET['by'] != '') {
+            $goodsArr[$key]['by'] = "";
+            $goodsArr[$key]['reserved'] = "";
+        }
+    }
+    file_put_contents('goods.json', json_encode($goodsArr));
 
-file_put_contents('goods.json', $goods);
+    echo json_encode($goodsArr);
+} else {
+    $goods = file_get_contents('_goods.json');
 
-echo $goods;
+    file_put_contents('goods.json', $goods);
+
+    echo $goods;
+}
+
